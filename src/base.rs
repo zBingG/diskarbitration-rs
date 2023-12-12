@@ -64,7 +64,12 @@ extern "C" {
         run_loop: CFRunLoopRef,
         run_loop_mode: CFStringRef,
     );
-
+    /// Unregisters a registered callback function
+    pub fn DAUnregisterCallback(
+        session: DASessionRef,
+        callback: *mut c_void,
+        context: *mut c_void
+    );
     pub static kDADiskDescriptionMatchVolumeMountable: CFDictionaryRef;
     pub static kDADiskDescriptionDeviceProtocolKey: CFStringRef;
 }
